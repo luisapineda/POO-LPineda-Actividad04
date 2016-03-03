@@ -13,7 +13,51 @@ public class Telefono {
     botonApagar EA= new botonApagar();
     //El constructor es solamente necesario para no objetos
     //como el objeto se construye del otro constructos no es necesario aqui un constructorrr!!!
+    
     Tecla[][] Teclado=new Tecla[5][3]; //array de teclas [r][c]
+    
+    public static Contacto[] listaDeCont=new Contacto[100];
+    
+    private static int buscaEspacio(){
+        int t=1000;
+        for (int i=0; i<100; i++){
+            if(listaDeCont[i]==null){
+                t=i;
+                i=101;
+            }
+        }
+        return t;
+    }
+    public static String nuevoContacto(String nombre,String correo, String telefono){ //Asignar un nuevo contacto
+        Contacto temp= new Contacto(nombre, correo, telefono);
+        if (buscaEspacio()==1000){
+            return "Espacio de memoria lleno";
+        } else { 
+        listaDeCont[buscaEspacio()]=temp;
+        return "Contacto salvado";
+        }
+    }
+   
+    protected static Contacto busqueda(int r){
+        if (listaDeCont[r]!=null){
+            Contacto temp; //creo un apuntador
+            temp= listaDeCont[r];
+            return temp;
+        } else { 
+            return null;
+        }
+    }
+    protected static String desplegarLista(){
+        String l="";
+        for (int i=0; i<100; i++){
+            if (listaDeCont[i]!=null){
+            Contacto temp;
+            temp= listaDeCont[i];
+            l= l + "\n " + temp.correo + " " + temp.nombre + " " + temp.telefono;
+            }
+        }
+        return l;
+    }
     
     public void setTeclado(){
         
