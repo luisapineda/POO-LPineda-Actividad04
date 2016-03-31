@@ -16,6 +16,7 @@ public class PuntosExtra {
      */
     public static void main(String[] args) {
         IMC sujeto= new IMC();
+        sujeto.obtenerIMC();
     }
     
 }
