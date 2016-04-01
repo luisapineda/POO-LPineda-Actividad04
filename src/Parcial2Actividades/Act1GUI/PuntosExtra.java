@@ -15,8 +15,12 @@ public class PuntosExtra {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        IMC sujeto= new IMC();
-        sujeto.obtenerIMC();
+        IMC persona= new IMC();
+        IMC.obtenerIMC();
+        System.out.println("Nombre: " + persona.getNombre());
+        System.out.println("IMC: "+persona.getIMC());
+        System.out.println("Peso: "+persona.getPeso()+"kg");
+        System.out.println("Altura: "+persona.getAltura()+"m");
     }
     
 }

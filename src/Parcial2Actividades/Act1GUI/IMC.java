@@ -11,15 +11,14 @@ import javax.swing.JOptionPane;
  */
 public class IMC {
     //atributos
-    private float peso, altura;
-    private double IMC;
-    private String nombre;
+    private static float peso, altura;
+    private static double IMC;
+    private static String nombre;
     
-    //constructor
     public IMC(){
     }
     
-    public void obtenerIMC(){
+    public static void obtenerIMC(){
     JOptionPane.showMessageDialog(null, "Bienvenido a la calculadora de IMC, podras calcularlo y saber cual es tu estado de salud actual");
     nombre=JOptionPane.showInputDialog(null, "Ingresa tu nombre", "Ejemplo: Luisa");
     peso=Float.parseFloat(JOptionPane.showInputDialog(null, "Ingresa tu peso en kilogramos", "Ejemplo: 63"));
@@ -34,6 +33,19 @@ public class IMC {
         if (IMC>=27){ texto=", usted posee obesidad";}
     JOptionPane.showMessageDialog(null, nombre+ ", tu IMC es " + IMC + texto);
     JOptionPane.showMessageDialog(null, "Gracias por utilizar la calculadora. Coma frutas y verduras");
+    }
+    
+    public double getIMC(){
+        return this.IMC;
+    }
+    public String getNombre(){
+        return this.nombre;
+    }
+    public float getPeso(){
+        return this.peso;
+    }
+    public float getAltura(){
+        return this.altura;
     }
 }
 
